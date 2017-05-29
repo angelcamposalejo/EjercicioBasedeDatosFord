@@ -92,4 +92,18 @@ insert into payroll(employee_id,eff_date,position_id,division_id,salary)values
 ('5','1970-04-22','4','3','50000.00'),
 ('5','1990-06-10','4','4','58000.00');
 
-
+create table best_store(
+best_store_id int (10) auto_increment not null primary key,
+name varchar(50) not null,
+state varchar(50) not null,
+sales varchar(10) not null
+);
+CREATE VIEW vw_beststores AS
+    SELECT 
+        name,state,sales
+    FROM
+        store
+    WHERE
+        sales='E';
+insert into best_store(name,state,sales)
+(select name,state,sales from store where sales='E');
