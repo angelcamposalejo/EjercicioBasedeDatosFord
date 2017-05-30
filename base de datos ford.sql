@@ -107,3 +107,16 @@ CREATE VIEW vw_beststores AS
         sales='E';
 insert into best_store(name,state,sales)
 (select name,state,sales from store where sales='E');
+SELECT 
+    name, state, sales
+FROM
+    store
+WHERE
+    sales = 'E' 
+UNION ALL SELECT 
+    name, state, sales
+FROM
+    store
+WHERE
+    state = 'CA';
+
