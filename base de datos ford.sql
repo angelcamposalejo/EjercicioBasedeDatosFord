@@ -119,4 +119,11 @@ FROM
     store
 WHERE
     state = 'CA';
-
+SELECT CURRENT_TIME();
+SELECT 
+    name,
+    contract_date,
+    DATE_FORMAT(contract_date, '%W,%M%Y') AS date1,
+    DATE_FORMAT(contract_date, '%D%y%a%d%m%b%j') AS date2
+FROM
+    employee;
